@@ -24,17 +24,7 @@ from blade_util import relative_path
 
 
 # import these modules make build functions registered into build_rules
-# TODO(chen3feng): Load build modules dynamically to enable extension.
-import cc_targets
-import gen_rule_target
-import java_jar_target
-import java_targets
-import lex_yacc_target
-import proto_library_target
-import py_targets
-import resource_library_target
-import swig_library_target
-import thrift_library
+from build_targets import *
 
 
 class TargetAttributes(object):

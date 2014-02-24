@@ -17,6 +17,7 @@ import build_rules
 
 from blade_util import var_to_list
 from target import Target
+from java_target_helper import JavaTarget
 
 
 class JavaTarget(Target):
@@ -84,72 +85,3 @@ class JavaTarget(Target):
         """
         self._generate_classes()
         self._generate_jar()
-
-
-class JavaLibrary(JavaTarget):
-    """JavaLibrary"""
-    def __init__(self, name, srcs, deps, prebuilt, **kwargs):
-        type = 'java_library'
-        if prebuilt:
-            type = 'prebuilt_java_library'
-        JavaTarget.__init__(self, name, type, srcs, deps, prebuilt, kwargs)
-
-
-class JavaBinary(JavaTarget):
-    """JavaLibrary"""
-    def __init__(self, name, srcs, deps, **kwargs):
-        type = 'java_binary'
-        JavaTarget.__init__(self, name, type, srcs, deps, False, kwargs)
-
-
-class JavaTest(JavaBinary):
-    """JavaLibrary"""
-    def __init__(self, name, srcs, deps, **kwargs):
-        type = 'java_binary'
-        JavaTarget.__init__(self, name, type, srcs, deps, False, kwargs)
-
-
-def java_library(name,
-                 srcs=[],
-                 deps=[],
-                 prebuilt=False,
-                 **kwargs):
-    """Define java_jar target. """
-    target = JavaLibrary(name,
-                         srcs,
-                         deps,
-                         prebuilt,
-                         blade.blade,
-                         kwargs)
-    blade.blade.register_target(target)
-
-
-def java_binary(name,
-                srcs=[],
-                deps=[],
-                **kwargs):
-    """Define java_jar target. """
-    target = JavaBinary(name,
-                        srcs,
-                        deps,
-                        blade.blade,
-                        kwargs)
-    blade.blade.register_target(target)
-
-
-def java_test(name,
-              srcs=[],
-              deps=[],
-              **kwargs):
-    """Define java_jar target. """
-    target = JavaTest(name,
-                      srcs,
-                      deps,
-                      blade.blade,
-                      kwargs)
-    blade.blade.register_target(target)
-
-
-build_rules.register_function(java_binary)
-build_rules.register_function(java_library)
-build_rules.register_function(java_test)

@@ -15,7 +15,7 @@ import console
 import configparse
 import build_rules
 from blade_util import var_to_list
-from cc_targets import CcTarget
+from cc_target_helper import CcTarget
 
 
 class ProtoLibrary(CcTarget):

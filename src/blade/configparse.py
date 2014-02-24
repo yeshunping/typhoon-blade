@@ -16,7 +16,8 @@ import traceback
 
 import console
 from blade_util import var_to_list
-from cc_targets import HEAP_CHECK_VALUES
+# TODO(yeshunping) : Should not import from modules in dir build_targets/
+from build_targets.cc_test_target import HEAP_CHECK_VALUES
 
 
 # Global config object

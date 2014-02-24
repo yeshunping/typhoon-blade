@@ -1,0 +1,18 @@
+__all__ = [
+    "cc_benchmark_target",
+    "cc_binary_target",
+    "cc_library_target",
+    "cc_plugin_target",
+    "cc_test_target",
+    "proto_library_target",
+    "thrift_library_target",
+    "gen_rule_target",
+    "py_binary_target",
+    "lex_yacc_target",
+    "resource_library_target",
+    "swig_library_target",
+    "java_jar_target",
+    "java_library_target",
+    "java_binary_target",
+    "java_test_target",
+]

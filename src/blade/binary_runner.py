@@ -20,7 +20,7 @@ import subprocess
 import sys
 
 import blade
-import cc_targets
+from build_targets import cc_test_target
 import console
 
 from blade_util import environ_add_path

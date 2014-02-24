@@ -13,8 +13,7 @@ import blade
 
 import console
 import build_rules
-from cc_targets import CcTarget
-
+from cc_target_helper import CcTarget
 
 class LexYaccLibrary(CcTarget):
     """A scons cc target subclass.

@@ -308,7 +308,7 @@ class Target(object):
         files = var_to_list(target_files)
         files_str = ','.join(['%s' % f for f in files])
         targets = self.blade.get_build_targets()
-        import gen_rule_target
+        from build_targets import gen_rule_target
         deps = self.expanded_deps
         for d in deps:
             dep_target = targets[d]

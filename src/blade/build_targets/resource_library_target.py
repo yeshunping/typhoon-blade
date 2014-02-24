@@ -13,9 +13,8 @@ import blade
 
 import build_rules
 import java_jar_target
-import py_targets
-from cc_targets import CcTarget
-
+import py_binary_target
+from cc_target_helper import CcTarget
 
 class ResourceLibrary(CcTarget):
     """A scons cc target subclass.

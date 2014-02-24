@@ -21,12 +21,11 @@ import console
 
 import build_rules
 import java_jar_target
-import py_targets
+import py_binary_target
 
 from blade_util import var_to_list
-from cc_targets import CcTarget
 from thrift_helper import ThriftHelper
-
+from cc_target_helper import CcTarget
 
 class ThriftLibrary(CcTarget):
     """A scons thrift library target subclass.
